@@ -1,0 +1,70 @@
+Check if two arrays are equal or not
+--------------------------------------------------------------------------
+class Solution{
+    public:
+
+    //Function to check if two arrays are equal or not.
+    bool check(vector<ll> A, vector<ll> B, int N) {
+        int sum0=0,x0=0,sum1=0,x1=0,i;
+        for( i = 0 ; i < N; i++){
+            sum0 = sum0 + A[i];                //taking sum of first array
+            x0 = x0 ^ A[i];                  
+            sum1 = sum1 + B[i];                 //taking sum of second array
+            x1 = x1 ^ B[i]; 
+        }
+        if(sum0 == sum1 && x0 == x1){
+          return true;  
+        }
+        else{
+        return false;
+    }
+    }
+};
+
+------------------------------------------------------------
+Array sorting in C++
+------------------------------------------------------------
+#include <bits/stdc++.h>
+using namespace std;
+  
+int main()
+{
+    int arr[] = { 1, 5, 8, 9, 6, 7, 3, 4, 2, 0 };
+    int n = sizeof(arr) / sizeof(arr[0]);                 //n = 40/4 = 10
+  
+    /*Here we take two parameters, the beginning of the array and the length n upto which we want the array to be sorted*/
+    sort(arr, arr + n);
+ 
+    for (int i = 0; i < n; ++i)
+        cout << arr[i] << " ";
+  
+    return 0;
+}
+
+------------------------------------------------------------
+Check if two arrays are equal or not
+------------------------------------------------------------
+
+class Solution{
+    public:
+
+    //Function to check if two arrays are equal or not.
+    bool check(vector<ll> A, vector<ll> B, int N) {
+        int i,count = 0;
+         sort(A.begin() ,A.end());
+         sort(B.begin() ,B.end());
+         
+   
+        for(i = 0; i < N ; i++)
+        {
+            if(A[i] == B[i])
+            count++;
+        }
+        if(count == N){
+          return true;  
+        }
+        else{
+        return false;
+    }
+    }
+};
