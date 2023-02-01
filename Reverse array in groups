@@ -1,0 +1,21 @@
+-------------------------------------------------------------
+Reverse array in groups
+-------------------------------------------------------------
+
+class Solution{
+public:
+    //Function to reverse every sub-array group of size k.
+    void reverseInGroups(vector<long long>& arr, int n, int k){
+        int i = 0, j = k ;
+        while(j <= n)
+        {
+            reverse(arr.begin()+i,arr.begin()+j);
+            
+            i = j;
+            j = j + k;
+            
+        }
+        if(i < n)
+        reverse(arr.begin()+i,arr.end());
+    }
+};
